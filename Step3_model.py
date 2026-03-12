@@ -311,7 +311,7 @@ if __name__ == '__main__':
 
     # step1 数据切分
     from Step2_DataEncoding import DataEncoding
-    vocab_dir = '/home/jlk/Project/023_CancerTrans/DeepTTC'
+    vocab_dir = '/content/DeepTTC'
     obj = DataEncoding(vocab_dir=vocab_dir)
 
     # 切分完成
@@ -322,7 +322,7 @@ if __name__ == '__main__':
         testdata=testdata)
 
     # step2：构造模型
-    modeldir = '/home/jlk/Project/023_CancerTrans/DeepTTC/Model_80'
+    modeldir = '/content/DeepTTC/Model_80'
     modelfile = modeldir + '/model.pt'
     if not os.path.exists(modeldir):
         os.mkdir(modeldir)
@@ -332,6 +332,7 @@ if __name__ == '__main__':
               val_drug=testdata, val_rna=test_rnadata)
     net.save_model()
     print("Model Saveed :{}".format(modelfile))
+
 
 
 
