@@ -476,8 +476,9 @@ class GetData():
 
 if __name__ == '__main__':
 
-    rnafile ='/home/jlk/Project/023_CancerTrans/GDSC_data/Cell_line_RMA_proc_basalExp.txt'
-    drugfile = '/home/jlk/Project/023_CancerTrans/smile_inchi.csv'
+    rnafile ='/content/DeepTTC/GDSC_data/Cell_line_RMA_proc_basalExp.txt'
+    drugfile = '/content/DeepTTC/GDSC_data/smile_inchi.csv'
 
     obj = GetData()
+
 
