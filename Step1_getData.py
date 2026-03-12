@@ -16,7 +16,7 @@ from sklearn.model_selection import train_test_split
 
 class GetData():
     def __init__(self):
-        PATH = '/home/jlk/Project/023_CancerTrans/GDSC_data/'
+        PATH = '/content/DeepTTC/GDSC_data/'
 
         rnafile = PATH + '/Cell_line_RMA_proc_basalExp.txt'
         smilefile = PATH + '/smile_inchi.csv'
@@ -480,3 +480,4 @@ if __name__ == '__main__':
     drugfile = '/home/jlk/Project/023_CancerTrans/smile_inchi.csv'
 
     obj = GetData()
+
