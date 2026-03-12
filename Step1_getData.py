@@ -102,8 +102,8 @@ class GetData():
                 train_data = sub_train
                 test_data = sub_test
             else:
-                train_data = train_data.append(sub_train)
-                test_data = test_data.append(sub_test)
+                train_data = train_data.concat([train_data, sub_train])
+                test_data = test_data.concat([test_data, sub_test])
         print('#' * 50)
         print('#\t 数据对一共有：{}'.format(df.shape[0]))
         print('#\t 按照{}对数据进行切割，对于每个instance，{}的数据进行训练，{}的数据进行验证'.format(col,(1-ratio),ratio))
@@ -354,8 +354,8 @@ class GetData():
                 train_data = sub_train
                 test_data = sub_test
             else:
-                train_data = train_data.append(sub_train)
-                test_data = test_data.append(sub_test)
+                train_data = train_data.concat([train_data, sub_train])
+                test_data = test_data.concat([test_data, sub_test])
         print('#' * 50)
         print('#\t 数据对一共有：{}'.format(df.shape[0]))
         print('#\t 按照{}对数据进行切割，对于每个instance，{}的数据进行训练，{}的数据进行验证'.format(col,(1-ratio),ratio))
@@ -373,7 +373,7 @@ class GetData():
 
         down_pos_data = pos_data.loc[random.sample(list(pos_data.index),neg_data.shape[0])]
 
-        combine_data = neg_data.append(down_pos_data)
+        combine_data = neg_data.concat([neg_data, down_pos_data])
 
 
         combine_data = combine_data[['DRUG_ID', 'COSMIC_ID','TCGA_DESC', 'LN_IC50','Binary_IC50']]
@@ -480,5 +480,6 @@ if __name__ == '__main__':
     drugfile = '/content/DeepTTC/GDSC_data/smile_inchi.csv'
 
     obj = GetData()
+
 
 
