@@ -72,12 +72,13 @@ class DataEncoding:
         return traindata, train_rnadata, testdata, test_rnadata
 
 if __name__ == '__main__':
-    vocab_dir = '/home/jlk/Project/023_CancerTrans/DeepTTC'
+    vocab_dir = '/content/DeepTTC'
     obj = DataEncoding(vocab_dir=vocab_dir)
     traindata, testdata = obj.Getdata.ByCancer(random_seed= 1)
 
     traindata, train_rnadata, testdata, test_rnadata = obj.encode(
         traindata=traindata,
         testdata=testdata)
+
 
     print(traindata, train_rnadata, testdata, test_rnadata)
