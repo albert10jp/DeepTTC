@@ -12,7 +12,7 @@
 import os,sys
 import pandas as pd
 import pubchempy as pcp
-import pickle5 as pickle
+import pickle
 
 pub_file = sys.argv[1]
 pub_df = pd.read_csv(pub_file)
@@ -40,4 +40,5 @@ pub_df['smiles'] = smile_list
 pub_df['inchi'] = inchi_list
 
 # pub_df.to_pickle('smile_inchi.pkl',protocol=4)
+
 pub_df.to_csv('smile_inchi.csv')
