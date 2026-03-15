@@ -137,7 +137,7 @@ class DeepTTC:
         model_drug = transformer()
         model_gene = MLP()
         self.model = Classifier(model_drug,model_gene)
-		self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.modeldir = modeldir
         self.record_file = os.path.join(self.modeldir, "valid_markdowntable.txt")
         self.pkl_file = os.path.join(self.modeldir, "loss_curve_iter.pkl")
