@@ -467,7 +467,15 @@ class GetData():
         test_rnaid = ['DATA.' +str(i) for i in test_rnaid ]
 
         rnadata =  pd.read_csv(self.rnafile,sep='\t')
+        # Filter IDs and show stats for training data
+        original_train_count = len(train_rnaid)
+        train_rnaid = [i for i in train_rnaid if i in rnadata.columns]
+        print(f'Training: {len(train_rnaid)}/{original_train_count} cell lines found in RNA matrix.')
         train_rnadata = rnadata[train_rnaid]
+        # Filter IDs and show stats for testing data
+        original_test_count = len(test_rnaid)
+        test_rnaid = [i for i in test_rnaid if i in rnadata.columns]
+        print(f'Testing: {len(test_rnaid)}/{original_test_count} cell lines found in RNA matrix.')
         test_rnadata = rnadata[test_rnaid]
 
         return train_rnadata,test_rnadata
