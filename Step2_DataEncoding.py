@@ -1,12 +1,14 @@
+
 # python3
 # -*- coding:utf-8 -*-
 
 """
 @author:野山羊骑士
 @e-mail：thankyoulaojiang@163.com
-@file：PycharmProject-PyCharm-DataEncoding.py
-@time:2021/9/7 10:04 
+@file：Step2_DataEncoding.py
+@time:2021/9/7
 """
+
 import numpy as np
 import pandas as pd
 import codecs
@@ -72,13 +74,12 @@ class DataEncoding:
         return traindata, train_rnadata, testdata, test_rnadata
 
 if __name__ == '__main__':
-    vocab_dir = '/content/DeepTTC'
+    vocab_dir = '.'
     obj = DataEncoding(vocab_dir=vocab_dir)
     traindata, testdata = obj.Getdata.ByCancer(random_seed= 1)
 
     traindata, train_rnadata, testdata, test_rnadata = obj.encode(
         traindata=traindata,
         testdata=testdata)
-
 
     print(traindata, train_rnadata, testdata, test_rnadata)
