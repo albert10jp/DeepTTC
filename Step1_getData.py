@@ -4,8 +4,8 @@
 """
 @author:野山羊骑士
 @e-mail：thankyoulaojiang@163.com
-@file：PycharmProject-PyCharm-Step1_getData.py
-@time:2021/8/12 15:48 
+@file：Step1_getData.py
+@time:2021/8/12
 """
 import sys
 import csv
@@ -16,7 +16,7 @@ from sklearn.model_selection import train_test_split
 
 class GetData():
     def __init__(self):
-        PATH = '/content/DeepTTC/GDSC_data/'
+        PATH = 'GDSC_data/'
 
         rnafile = PATH + '/Cell_line_RMA_proc_basalExp.txt'
         smilefile = PATH + '/smile_inchi.csv'
@@ -481,14 +481,11 @@ class GetData():
         return train_rnadata,test_rnadata
 
 
-
 if __name__ == '__main__':
 
-    rnafile ='/content/DeepTTC/GDSC_data/Cell_line_RMA_proc_basalExp.txt'
-    drugfile = '/content/DeepTTC/GDSC_data/smile_inchi.csv'
+    rnafile ='GDSC_data/Cell_line_RMA_proc_basalExp.txt'
+    drugfile = 'GDSC_data/smile_inchi.csv'
 
     obj = GetData()
-
-
-
-
+    train, test = obj.ByCancer(random_seed=42)
+    print(train.head())
